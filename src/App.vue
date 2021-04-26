@@ -1,15 +1,17 @@
 <template>
 <div>
   <NavBar />
+  <Spinner />
   <router-view/>
 </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue'
+import Spinner from './components/Spinner.vue'
 
 export default {
-  components: { NavBar }
+  components: { NavBar, Spinner }
 }
 </script>
 
