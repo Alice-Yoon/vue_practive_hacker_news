@@ -1,8 +1,19 @@
 <template>
-  <div id="Spinner">
+  <div id="Spinner" v-if="loading">
     <div class="spinner"></div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    loading: {
+      type: Boolean,
+      required: true
+    }
+  }
+}
+</script>
 
 <style scoped>
   #Spinner {

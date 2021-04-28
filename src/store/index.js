@@ -6,7 +6,8 @@ export default createStore({
   state: {
     news: [],
     ask: [],
-    jobs: []
+    jobs: [],
+    loading: false,
   },
   mutations,
   actions,

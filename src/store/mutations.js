@@ -8,4 +8,7 @@ export default {
   SET_ASK(state, data) {
     state.ask = data
   },
+  TOGGLE_LOADING(state, data) {
+    state.loading = data
+  }
 }

@@ -1,7 +1,7 @@
 <template>
 <div>
   <NavBar />
-  <Spinner />
+  <Spinner :loading="$store.state.loading" />
   <router-view/>
 </div>
 </template>
@@ -11,7 +11,18 @@ import NavBar from './components/NavBar.vue'
 import Spinner from './components/Spinner.vue'
 
 export default {
-  components: { NavBar, Spinner }
+  components: { NavBar, Spinner },
+  created() {
+
+  },
+  methods: {
+    startSpinner() {
+      this.loadingStatus = true
+    },
+    endSpinner() {
+      this.loadingStatus = false
+    }
+  }
 }
 </script>
 

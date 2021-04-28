@@ -2,18 +2,21 @@ import { getNewsList, getAskList, getJobsList } from '../api/index.js'
 
 export default {
   async FETCH_NEWS({ commit }) {
-    const { data } = await getNewsList()
-    commit('SET_NEWS', data)
+    const response = await getNewsList()
+    commit('SET_NEWS', response.data)
+    return response
     // console.log("news::", data)
   },
   async FETCH_JOBS({ commit }) {
-    const { data } = await getJobsList()
-    commit('SET_JOBS', data)
+    const response = await getJobsList()
+    commit('SET_JOBS', response.data)
+    return response
     // console.log("jobs::", data)
   },
   async FETCH_ASK({ commit }) {
-    const { data } = await getAskList()
-    commit('SET_ASK', data)
+    const response = await getAskList()
+    commit('SET_ASK', response.data)
+    return response
     // console.log("ask::", data)
   },
 

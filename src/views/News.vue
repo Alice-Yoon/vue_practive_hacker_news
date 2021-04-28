@@ -4,11 +4,18 @@
 
 <script>
 import ListView from '@/components/ListView.vue'
+// import bus from '../utils/bus.js'
 
 export default {
   components: { ListView },
   created() {
-    this.$store.dispatch('FETCH_NEWS')
+    this.$store.commit('TOGGLE_LOADING', true)
+    setTimeout(() => {
+      this.$store.dispatch('FETCH_NEWS')
+        .then(() => {
+          this.$store.commit('TOGGLE_LOADING', false)
+        })
+    }, 3000)
   }
 }
 </script>
